@@ -1,0 +1,15 @@
+<div class="container main-container animated fadeIn low">
+    <h1 style="margin-bottom: 30px;">Busqueda de Héroes: <small>{{idBusqueda}}</small></h1>
+
+    <div class="row" *ngIf="heroesBuscados.length==0">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                No existen resultados con el termino: {{idBusqueda}}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-columns">
+        <app-heroe-tarjeta [heroe]="heroe" [i]="heroe.index" *ngFor="let heroe of heroesBuscados;"></app-heroe-tarjeta>
+    </div>
+</div>
